@@ -2,7 +2,7 @@
 
 namespace Exception
 {
-    internal class Customer
+    partial class Customer
     {
         internal void customerDetails()
         {

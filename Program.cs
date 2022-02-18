@@ -9,8 +9,6 @@ namespace Exception
     using System.Text;
     using System.Threading.Tasks;
 
-    using System;
-    using System.Collections.Generic;
 
 
 
@@ -181,96 +179,6 @@ namespace Exception
             }
         }
 
-        public class Customer
-        {
-
-
-            public int id
-            {
-                get; set;
-            }
-            public string name
-            {
-                get; set;
-            }
-            public int age
-            {
-                get; set;
-            }
-            public string address
-            {
-                get; set;
-            }
-            public int accountNo
-            {
-                get; set;
-            }
-            public int transaction
-            {
-                get; set;
-            }
-        };
-        class Program
-        {
-            public static string name { get; private set; }
-
-            private static void CustomerDetails()
-            {
-                Customer cust1 = new Customer()
-                {
-                    name = "ram",
-                    id = 110,
-                    age = 20,
-                    address = "hyd",
-                    accountNo = 1234,
-                    transaction = 5000
-                };
-
-                Customer cust2 = new Customer()
-                {
-                    name = "ramu",
-                    id = 210,
-                    age = 20,
-                    address = "ban",
-                    accountNo = 12354,
-                    transaction = 500
-                };
-                Customer cust3 = new Customer()
-                {
-                    name = "akhil",
-                    id = 230,
-                    age = 20,
-                    address = "vijayawada",
-                    accountNo = 123544,
-                    transaction = 2220
-                };
-                Customer cust4 = new Customer()
-                {
-                    name = "sukhi",
-                    id = 250,
-                    age =
-                    20,
-                    address = "pune",
-                    accountNo = 1235442,
-                    transaction = 2220
-                };
-
-                System.Collections.Generic.List<Customer> c = new List<Customer>();
-
-                c.Add(cust1);
-                c.Add(cust2);
-                c.Add(cust3);
-                c.Add(cust4);
-
-                foreach (Customer c1 in c)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("name     id       age        address       accountNo     transaction");
-                    Console.WriteLine("{0}      {1}      {2}          {3}        {4}            {5}", c1.name, c1.age, c1.id, c1.address, c1.accountNo, c1.transaction);
-                    Console.WriteLine();
-                }
-            }
-
             static void Main(string[] args)
             {
                 while (true)
@@ -288,8 +196,8 @@ namespace Exception
                     Console.WriteLine("Enter 1->savings 2->current 3->child");
                     Console.WriteLine("Choose an account");
                     int num = Convert.ToInt32(Console.ReadLine());
-
-                    switch (num)
+                Customer cst = new Customer();
+                switch (num)
                     {
                         case 1:
                             while (true)
@@ -313,8 +221,8 @@ namespace Exception
                                         s.withdraw(withdrawAmount);
                                         break;
                                     case 3:
-                                        Customer cst = new Customer();
-                                        Program.CustomerDetails();
+                                       
+                                        cst.CustomerDetails();
                                         break;
                                     case 4:
                                         int count = 0;
@@ -382,7 +290,7 @@ namespace Exception
                                         c1.deposit(withdrawAmount);
                                         break;
                                     case 3:
-                                        CustomerDetails();
+                                        cst.CustomerDetails();
                                         break;
                                     case 4:
                                         int count = 0;
@@ -449,7 +357,7 @@ namespace Exception
                                         c2.withdraw(withdrawAmount);
                                         break;
                                     case 3:
-                                        CustomerDetails();
+                                        cst.CustomerDetails();
                                         break;
                                     case 4:
                                         int count = 0;
@@ -517,5 +425,5 @@ namespace Exception
 
 
 
-}
+
 
